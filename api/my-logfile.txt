@@ -1,0 +1,88 @@
+0.000022 main                        (2): ALWAYS INCLUDE THE FOLLOWING LINES WHEN SENDING DEBUG MESSAGES TO THE MAILING LIST:
+0.000039 main                        (2): gphoto2 2.5.15
+0.000043 main                        (2): gphoto2 has been compiled with the following options:
+0.000045 main                        (2):  + gcc (C compiler used)
+0.000048 main                        (2):  + popt (mandatory, for handling command-line parameters)
+0.000050 main                        (2):  + exif (for displaying EXIF information)
+0.000052 main                        (2):  + cdk (for accessing configuration options)
+0.000055 main                        (2):  + aa (for displaying live previews)
+0.000058 main                        (2):  + jpeg (for displaying live previews in JPEG format)
+0.000060 main                        (2):  + readline (for easy navigation in the shell)
+0.000063 main                        (2): libgphoto2 2.5.16
+0.000066 main                        (2): libgphoto2 has been compiled with the following options:
+0.000068 main                        (2):  + all camlibs
+0.000071 main                        (2):  + gcc (C compiler used)
+0.000073 main                        (2):  + ltdl (for portable loading of camlibs)
+0.000076 main                        (2):  + EXIF (for special handling of EXIF files)
+0.000078 main                        (2): libgphoto2_port 0.12.0
+0.000081 main                        (2): libgphoto2_port has been compiled with the following options:
+0.000084 main                        (2):  + iolibs: disk ptpip serial usb1 usbdiskdirect usbscsi
+0.000086 main                        (2):  + gcc (C compiler used)
+0.000089 main                        (2):  + ltdl (for portable loading of iolibs)
+0.000092 main                        (2):  + USB (libusb1, for USB cameras)
+0.000094 main                        (2):  + serial (for serial cameras)
+0.000096 main                        (2):  + no resmgr (serial port access and locking)
+0.000099 main                        (2):  + no ttylock (serial port locking)
+0.000101 main                        (2):  + no lockdev (serial port locking)
+0.000104 main                        (2): CAMLIBS env var not set, using compile-time default instead
+0.000107 main                        (2): IOLIBS env var not set, using compile-time default instead
+0.000109 main                        (2): invoked with following arguments:
+0.000112 main                        (2):   --debug
+0.000114 main                        (2):   --debug-logfile=my-logfile.txt
+0.000117 main                        (2):   –list-cameras
+0.000126 load_settings               (2): Creating gphoto config directory ('/home/supos/.gphoto')
+0.000144 load_settings               (2): Loading settings from file '/home/supos/.gphoto/settings'.
+0.000257 main                        (2): Uploading file...
+0.000278 gp_camera_free              (2): Freeing camera...
+0.000282 gp_port_free                (2): Freeing port...
+0.000285 gp_filesystem_reset         (2): resetting filesystem
+0.000287 gp_filesystem_lru_clear     (2): Clearing fscache LRU list...
+0.000290 gp_filesystem_lru_clear     (2): fscache LRU list already empty
+0.000292 delete_all_folders          (2): Internally deleting all folders from '/'...
+0.000294 lookup_folder               (2): Lookup folder '/'...
+0.000297 lookup_folder               (2): Found! / is 0x5565384ed670
+0.000300 recurse_delete_folder       (2): Recurse delete folder 0x5565384ed670//
+0.000003 main                        (2): ALWAYS INCLUDE THE FOLLOWING LINES WHEN SENDING DEBUG MESSAGES TO THE MAILING LIST:
+0.000026 main                        (2): gphoto2 2.5.15
+0.000030 main                        (2): gphoto2 has been compiled with the following options:
+0.000032 main                        (2):  + gcc (C compiler used)
+0.000034 main                        (2):  + popt (mandatory, for handling command-line parameters)
+0.000036 main                        (2):  + exif (for displaying EXIF information)
+0.000038 main                        (2):  + cdk (for accessing configuration options)
+0.000045 main                        (2):  + aa (for displaying live previews)
+0.000047 main                        (2):  + jpeg (for displaying live previews in JPEG format)
+0.000049 main                        (2):  + readline (for easy navigation in the shell)
+0.000051 main                        (2): libgphoto2 2.5.16
+0.000053 main                        (2): libgphoto2 has been compiled with the following options:
+0.000055 main                        (2):  + all camlibs
+0.000057 main                        (2):  + gcc (C compiler used)
+0.000059 main                        (2):  + ltdl (for portable loading of camlibs)
+0.000061 main                        (2):  + EXIF (for special handling of EXIF files)
+0.000064 main                        (2): libgphoto2_port 0.12.0
+0.000066 main                        (2): libgphoto2_port has been compiled with the following options:
+0.000068 main                        (2):  + iolibs: disk ptpip serial usb1 usbdiskdirect usbscsi
+0.000070 main                        (2):  + gcc (C compiler used)
+0.000072 main                        (2):  + ltdl (for portable loading of iolibs)
+0.000074 main                        (2):  + USB (libusb1, for USB cameras)
+0.000075 main                        (2):  + serial (for serial cameras)
+0.000077 main                        (2):  + no resmgr (serial port access and locking)
+0.000079 main                        (2):  + no ttylock (serial port locking)
+0.000081 main                        (2):  + no lockdev (serial port locking)
+0.000083 main                        (2): CAMLIBS env var not set, using compile-time default instead
+0.000085 main                        (2): IOLIBS env var not set, using compile-time default instead
+0.000086 main                        (2): invoked with following arguments:
+0.000088 main                        (2):   --debug
+0.000090 main                        (2):   --debug-logfile=my-logfile.txt
+0.000092 main                        (2):   –list-cameras
+0.000098 load_settings               (2): Creating gphoto config directory ('/home/supos/.gphoto')
+0.000115 load_settings               (2): Loading settings from file '/home/supos/.gphoto/settings'.
+0.000168 main                        (2): Uploading file...
+0.000202 gp_camera_free              (2): Freeing camera...
+0.000207 gp_port_free                (2): Freeing port...
+0.000210 gp_filesystem_reset         (2): resetting filesystem
+0.000213 gp_filesystem_lru_clear     (2): Clearing fscache LRU list...
+0.000215 gp_filesystem_lru_clear     (2): fscache LRU list already empty
+0.000218 delete_all_folders          (2): Internally deleting all folders from '/'...
+0.000222 lookup_folder               (2): Lookup folder '/'...
+0.000225 lookup_folder               (2): Found! / is 0x558152dfc670
+0.000229 recurse_delete_folder       (2): Recurse delete folder 0x558152dfc670//

@@ -1,0 +1,127 @@
+#+Title:  蓝卓文字识别接口
+#+OPTIONS: toc:nil author:nil
+
+* 范围和限制
+
+目前的程序接口只支持通用文字识别，不支持表格。另外当前只支持印刷体。手写体和结构化文档将在后续版本提供。
+
+内部测试阶段只限公司内网访问，凭 API key 授权，请发邮件向研发四部索取。
+
+* 接口 URL
+
+http://192.168.10.21:5000/vision/ocr/image
+
+* 接口参数
+
+以 json 格式传入
+
+| 参数   | 说明              |
+| key    | 授权码            |
+| image | base64 编码的图像 |
+
+* 返回
+
+以 json 格式传出
+
+| 参数         | 说明            |
+| exitCode     | 0成功，其它出错 |
+| errorMessage | 出错信息文本    |
+| results      | 返回结果        |
+
+结果的类型是列表。列表中的每一项是个字典，其中"word"对应识别出的文字；"polygon"对应文字所在的多边形，多边形本身是一个列表，列表中有偶数个整数，每对整数表示多边形顶点的x, y坐标。
+
+** 错误码
+#+BEGIN_EXAMPLE
+ERR_NO_ERROR = 0
+ERR_UNEXPECTED = -1
+ERR_INVALID_JASON = -2
+ERR_MISSING_REQUIRED_FIELDS = -3
+ERR_INVALID_KEY = -4
+ERR_INVALID_BASE64 = -5
+ERR_IPC_ERROR = -6
+ERR_UNSUPPORTED_IMAGE_FORMAT = -7
+ERR_CORRUPTED_IMAGE = -8
+ERR_OVERSIZED_IMAGE = -9
+ERR_INVALID_IMAGE_RESOLUTION = -10
+#+END_EXAMPLE
+** 错误信息
+#+BEGIN_EXAMPLE
+    ERR_NO_ERROR: "succeed",
+    ERR_UNEXPECTED: "unexpected error",
+    ERR_INVALID_JASON: "invalid json",
+    ERR_MISSING_REQUIRED_FIELDS: "miss required fields(key, image)",
+    ERR_INVALID_KEY: "invalid key",
+    ERR_INVALID_BASE64: "invalid base64",
+    ERR_IPC_ERROR: "IPC error",
+    ERR_UNSUPPORTED_IMAGE_FORMAT: "unsupported image format",
+    ERR_CORRUPTED_IMAGE: "corrupted image",
+    ERR_OVERSIZED_IMAGE: "image size exceed 4M bytes",
+    ERR_INVALID_IMAGE_RESOLUTION: "image resolution not in range 512 <= H,W <= 4096",
+#+END_EXAMPLE
+
+* 文字识别服务
+
+文字识别服务运行在研发自用的 GPU 工作站上。由于资源紧张，该服务有可能被需要利用该机器进行其它工作的同事停掉。请自行通过下面的接口启动和查询服务的运行状态，并知会四部的同事。
+
+启动服务
+
+[[http://192.168.10.21:5000/vision/ocr/start]]
+
+查询状态
+
+[[http://192.168.10.21:5000/vision/ocr/status]]
+
+
+日志（不公开接口）
+[[http://192.168.10.21:5000/vision/ocr/status]]
+展示后台日志的最后 10 行
+
+
+# 管理服务的自启动
+
+# #+BEGIN_SRC shell
+# env -i PATH=$HOME/ve3/bin:$PATH VIRTUAL_ENV=$HOME/ve3 $HOME/work/ocr/MaskTextSpotter/tools/server.py
+# #+END_SRC
+* 示例
+#+BEGIN_SRC python
+import json
+from base64 import b64encode
+from urllib import request
+
+
+# check status
+ip = "192.168.10.21"
+base_url = "http://{}:5000/vision/ocr/{}"
+url = base_url.format(ip, "status")
+resp = request.urlopen(url)
+ret = json.loads(resp.read())
+
+# start ocr worker is not started
+if not ret["active"]:
+    url = base_url.format(ip, "start")
+    resp = request.urlopen(url)
+    ret = json.loads(resp.read())
+    print(ret["pid"])
+
+# ocr
+# read contents but dont decode
+jpg = open("../ocr.jpeg", "rb").read()
+url = base_url.format(ip, "image")
+headers = {"Content-Type": "application/json"}
+data = {"key": "ocr.bluetron.cn"}
+# encode to base64 and convert bytes to str
+data["image"] = b64encode(jpg).decode()
+bindata = json.dumps(data).encode()
+req = request.Request(url, bindata, headers)
+resp = request.urlopen(req)
+ret = json.loads(resp.read())
+if ret["exitCode"] == 0:
+    for result in ret["results"]:
+        word = result["word"]
+        polygon = result["polygon"]
+        print("{} at {}".format(word, polygon))
+else:
+    print("exitCode: {exitCode}, errorMessage: {errorMessage}".format_map(ret))
+# polygon is [x1, y1, x2, y2, .... xn, yn]
+#+END_SRC
+

@@ -1,0 +1,183 @@
+2023-04-04 11:28:57,528 ERROR api: IPC error
+Traceback (most recent call last):
+  File "capture-image2.py", line 110, in <module>
+    main()
+  File "capture-image2.py", line 94, in main
+    out = json.dumps(out).encode()
+  File "/usr/lib/python3.6/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.6/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+2023-04-04 14:18:43,504 ERROR api: IPC error
+Traceback (most recent call last):
+  File "capture-image2.py", line 110, in <module>
+    main()
+  File "capture-image2.py", line 78, in main
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'io' is not defined
+2023-04-04 14:20:11,206 ERROR api: IPC error
+Traceback (most recent call last):
+  File "capture-image2.py", line 110, in <module>
+    main()
+  File "capture-image2.py", line 78, in main
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'io' is not defined
+2023-04-04 14:35:24,085 ERROR api: IPC error
+Traceback (most recent call last):
+  File "capture-image2.py", line 110, in <module>
+    main()
+  File "capture-image2.py", line 78, in main
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'io' is not defined
+2023-04-04 14:37:41,125 ERROR api: IPC error
+Traceback (most recent call last):
+  File "capture-image2.py", line 110, in <module>
+    main()
+  File "capture-image2.py", line 78, in main
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'io' is not defined
+2023-04-04 14:38:46,593 ERROR api: IPC error
+Traceback (most recent call last):
+  File "capture-image2.py", line 110, in <module>
+    main()
+  File "capture-image2.py", line 78, in main
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'io' is not defined
+2023-04-04 14:39:55,268 ERROR api: IPC error
+Traceback (most recent call last):
+  File "capture-image2.py", line 111, in <module>
+    main()
+  File "capture-image2.py", line 79, in main
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'io' is not defined
+2023-04-04 14:45:11,283 ERROR api: get one frame err
+Traceback (most recent call last):
+  File "capture-image2.py", line 80, in main
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'io' is not defined
+2023-04-04 14:45:47,271 ERROR api: get one frame err
+Traceback (most recent call last):
+  File "capture-image2.py", line 80, in main
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'io' is not defined
+2023-04-04 14:51:09,323 ERROR >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "capture-image2.py", line 80, in main
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'io' is not defined
+2023-04-04 14:51:09,324 ERROR api: get one frame err
+Traceback (most recent call last):
+  File "capture-image2.py", line 80, in main
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'io' is not defined
+2023-04-04 14:52:20,757 ERROR >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "capture-image2.py", line 80, in main
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'io' is not defined
+2023-04-04 14:52:20,757 ERROR api: get one frame err
+Traceback (most recent call last):
+  File "capture-image2.py", line 80, in main
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'io' is not defined
+2023-04-04 15:59:54,941 ERROR >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "capture-image2.py", line 93, in main
+    print_img = get_print_image(file_data)
+  File "capture-image2.py", line 51, in get_print_image
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'file_data' is not defined
+2023-04-04 15:59:54,942 ERROR api: get one frame err
+Traceback (most recent call last):
+  File "capture-image2.py", line 93, in main
+    print_img = get_print_image(file_data)
+  File "capture-image2.py", line 51, in get_print_image
+    image = Image.open(io.BytesIO(file_data))
+NameError: name 'file_data' is not defined
+2023-04-04 16:01:57,254 ERROR >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "capture-image2.py", line 93, in main
+    print_img = get_print_image(file_data)
+  File "capture-image2.py", line 54, in get_print_image
+    draw.text((389,697), vin, fill=(255,0,0), font=FONT)
+NameError: name 'vin' is not defined
+2023-04-04 16:01:57,254 ERROR api: get one frame err
+Traceback (most recent call last):
+  File "capture-image2.py", line 93, in main
+    print_img = get_print_image(file_data)
+  File "capture-image2.py", line 54, in get_print_image
+    draw.text((389,697), vin, fill=(255,0,0), font=FONT)
+NameError: name 'vin' is not defined
+2023-04-06 08:22:25,917 ERROR >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "capture-image2.py", line 91, in main
+    file_path = camera.capture(gp.GP_CAPTURE_IMAGE)
+gphoto2.GPhoto2Error: [-1] Unspecified error
+2023-04-06 08:22:25,918 ERROR api: get one frame err
+Traceback (most recent call last):
+  File "capture-image2.py", line 91, in main
+    file_path = camera.capture(gp.GP_CAPTURE_IMAGE)
+gphoto2.GPhoto2Error: [-1] Unspecified error
+2023-04-06 08:22:30,388 ERROR >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "capture-image2.py", line 91, in main
+    file_path = camera.capture(gp.GP_CAPTURE_IMAGE)
+gphoto2.GPhoto2Error: [-1] Unspecified error
+2023-04-06 08:22:30,388 ERROR api: get one frame err
+Traceback (most recent call last):
+  File "capture-image2.py", line 91, in main
+    file_path = camera.capture(gp.GP_CAPTURE_IMAGE)
+gphoto2.GPhoto2Error: [-1] Unspecified error
+2023-04-06 08:22:31,458 ERROR >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "capture-image2.py", line 91, in main
+    file_path = camera.capture(gp.GP_CAPTURE_IMAGE)
+gphoto2.GPhoto2Error: [-1] Unspecified error
+2023-04-06 08:22:31,459 ERROR api: get one frame err
+Traceback (most recent call last):
+  File "capture-image2.py", line 91, in main
+    file_path = camera.capture(gp.GP_CAPTURE_IMAGE)
+gphoto2.GPhoto2Error: [-1] Unspecified error
+2023-04-06 08:23:31,389 ERROR >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Traceback (most recent call last):
+  File "capture-image2.py", line 91, in main
+    file_path = camera.capture(gp.GP_CAPTURE_IMAGE)
+gphoto2.GPhoto2Error: [-1] Unspecified error
+2023-04-06 08:23:31,390 ERROR api: get one frame err
+Traceback (most recent call last):
+  File "capture-image2.py", line 91, in main
+    file_path = camera.capture(gp.GP_CAPTURE_IMAGE)
+gphoto2.GPhoto2Error: [-1] Unspecified error
+2023-04-06 11:07:50,315 ERROR api: IPC error
+Traceback (most recent call last):
+  File "capture-image2.py", line 128, in <module>
+    main()
+  File "capture-image2.py", line 72, in main
+    consumer = kafka_server.Kafka_consumer(KAFAKA_HOST, KAFAKA_PORT, KAFAKA_TOPIC_REQUEST, None, KEY)
+AttributeError: module 'kafka' has no attribute 'Kafka_consumer'
+2023-04-06 11:07:55,060 ERROR api: IPC error
+Traceback (most recent call last):
+  File "capture-image2.py", line 128, in <module>
+    main()
+  File "capture-image2.py", line 72, in main
+    consumer = kafka_server.Kafka_consumer(KAFAKA_HOST, KAFAKA_PORT, KAFAKA_TOPIC_REQUEST, None, KEY)
+AttributeError: module 'kafka' has no attribute 'Kafka_consumer'
+2023-04-06 11:11:33,606 ERROR api: IPC error
+Traceback (most recent call last):
+  File "capture-image2.py", line 128, in <module>
+    main()
+  File "capture-image2.py", line 72, in main
+    consumer = kafka_server.Kafka_consumer(KAFAKA_HOST, KAFAKA_PORT, KAFAKA_TOPIC_REQUEST, None, KEY)
+AttributeError: module 'kafka' has no attribute 'Kafka_consumer'
+2023-04-06 11:16:01,166 ERROR api: IPC error
+Traceback (most recent call last):
+  File "capture-image2.py", line 128, in <module>
+    main()
+  File "capture-image2.py", line 72, in main
+    consumer = kafka_server.Kafka_consumer(KAFAKA_HOST, KAFAKA_PORT, KAFAKA_TOPIC_REQUEST, None, KEY)
+AttributeError: module 'kafka' has no attribute 'Kafka_consumer'
